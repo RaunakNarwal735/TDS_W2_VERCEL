@@ -1,27 +1,18 @@
-name: CI Workflow
+ main.yml
+ name: Test Action
 
-on: 
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+ on:
+   push:
+     branches:
+       - main  # or any branch you want to trigger the action
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+ jobs:
+   test:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout code
+         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+       - name: 23f2002409@ds.study.iitm.ac.in
+         run: echo "Hello, world!"
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Tests
-        run: npm test
